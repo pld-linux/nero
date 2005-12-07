@@ -1,3 +1,5 @@
+# TODO
+# - FHS fix: move libraries in %{_datadir} to %{_libdir}
 #
 # Conditional build:
 %bcond_with	reqs		# force optional Requires

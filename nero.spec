@@ -34,7 +34,7 @@ CD/DVD burning software for Linux.
 %setup -q -c -T
 rpm2cpio %{SOURCE0} | cpio -i -d
 
-%{__sed} -i 's,Categories=.*,Categories=GTK;Utility;DiscBurning;,' \
+%{__sed} -i 's,Categories=.*,Categories=GTK;AudioVideo;DiscBurning;,' \
 	usr/share/nero/desktop/NeroLINUX.template
 cat >> usr/share/nero/desktop/NeroLINUX.template <<EOF
 Icon=nero.png

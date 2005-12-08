@@ -1,6 +1,7 @@
 # TODO
 # - FHS fix: move libraries in %{_datadir} to %{_libdir}
 #	but currently nero requires %{_datadir}/nero/*.so
+#   symlink for nero
 #
 # Conditional build:
 %bcond_with	reqs		# force optional Requires

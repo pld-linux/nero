@@ -1,7 +1,3 @@
-# TODO
-# - FHS fix: move libraries in %{_datadir} to %{_libdir}
-#	but currently nero requires %{_datadir}/nero/*.so
-#   symlink for nero
 #
 # Conditional build:
 %bcond_with	reqs		# force optional Requires
@@ -9,7 +5,7 @@
 Summary:	NeroLINUX CD/DVD burning
 Name:		nero
 Version:	2.0.0.4
-Release:	0.1
+Release:	0.2
 License:	Commercial see EULA
 Group:		X11/Applications
 Source0:	ftp://ftp1.mirror.nero.com/nerolinux-%{version}-x86.rpm
@@ -56,6 +52,13 @@ install usr/share/nero/pixmaps/* $RPM_BUILD_ROOT%{_pixmapsdir}
 # displayed at first startup
 install usr/share/nero/docs/EULA $RPM_BUILD_ROOT%{_datadir}/%{name}/docs
 
+# FHS compliance (*.so moved to %{_libdir})
+cd $RPM_BUILD_ROOT%{_datadir}/%{name}
+for i in *.so ; do
+	mv -f $i $RPM_BUILD_ROOT%{_libdir}
+	ln -s %{_libdir}/$i $i
+done
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -65,7 +68,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/*.so
 %dir %{_datadir}/%{name}
-%attr(755,root,root) %{_datadir}/%{name}/*.so
+%{_datadir}/%{name}/*.so
 %{_datadir}/%{name}/docs
 %{_datadir}/%{name}/sounds
 %{_datadir}/%{name}/CDROM.CFG

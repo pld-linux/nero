@@ -67,12 +67,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc usr/share/nero/docs/{Manual.pdf,NEWS}
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/*.so
-%dir %{_datadir}/%{name}
-%{_datadir}/%{name}/*.so
-%{_datadir}/%{name}/docs
-%{_datadir}/%{name}/sounds
-%{_datadir}/%{name}/CDROM.CFG
-%{_datadir}/%{name}/DosBootImage.ima
-%{_datadir}/%{name}/Nero.txt
+%{_datadir}/nero
 %{_desktopdir}/*
 %{_pixmapsdir}/*

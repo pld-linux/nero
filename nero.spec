@@ -8,7 +8,7 @@ Version:	2.0.0.4
 Release:	0.2
 License:	Commercial see EULA
 Group:		X11/Applications
-Source0:	ftp://ftp1.mirror.nero.com/nerolinux-%{version}-x86.rpm
+Source0:	ftp://ftp2.usw.nero.com/nerolinux-%{version}-x86.rpm
 # NoSource0-md5:	ae772a0566a0406cd9dabe80ab8fe816
 NoSource:	0
 URL:		http://www.nero.com/

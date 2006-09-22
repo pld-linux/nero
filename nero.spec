@@ -5,12 +5,12 @@
 Summary:	NeroLINUX CD/DVD burning
 Summary(pl):	NeroLINUX - program do wypalania p³yt CD/DVD
 Name:		nero
-Version:	2.1.0.1
+Version:	2.1.0.2
 Release:	1
 License:	Commercial (see EULA)
 Group:		X11/Applications
 Source0:	ftp://ftp2.usw.nero.com/nerolinux-%{version}-x86.rpm
-# NoSource0-md5:	2de45710b343c3e0a44556d840ea086a
+# NoSource0-md5:	6e10f72115b97305e310f0347fbc848a
 NoSource:	0
 URL:		http://www.nero.com/
 BuildRequires:	cpio

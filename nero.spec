@@ -3,7 +3,7 @@
 %bcond_with	reqs		# force optional Requires
 #
 Summary:	NeroLINUX CD/DVD burning
-Summary(pl):	NeroLINUX - program do wypalania p≥yt CD/DVD
+Summary(pl.UTF-8):   NeroLINUX - program do wypalania p≈Çyt CD/DVD
 Name:		nero
 Version:	2.1.0.3
 Release:	1
@@ -27,8 +27,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 CD/DVD burning software for Linux.
 
-%description -l pl
-Oprogramowanie do wypalania p≥yt CD/DVD pod Linuksem.
+%description -l pl.UTF-8
+Oprogramowanie do wypalania p≈Çyt CD/DVD pod Linuksem.
 
 %prep
 %setup -q -c -T

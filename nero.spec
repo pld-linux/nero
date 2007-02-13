@@ -3,7 +3,7 @@
 %bcond_with	reqs		# force optional Requires
 #
 Summary:	NeroLINUX CD/DVD burning
-Summary(pl.UTF-8):   NeroLINUX - program do wypalania płyt CD/DVD
+Summary(pl.UTF-8):	NeroLINUX - program do wypalania płyt CD/DVD
 Name:		nero
 Version:	2.1.0.3
 Release:	1

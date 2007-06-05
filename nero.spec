@@ -5,12 +5,12 @@
 Summary:	NeroLINUX CD/DVD burning
 Summary(pl.UTF-8):	NeroLINUX - program do wypalania płyt CD/DVD
 Name:		nero
-Version:	2.1.0.4b
+Version:	3.0.0.0
 Release:	1
 License:	Commercial (see EULA)
 Group:		X11/Applications
-Source0:	http://ftp11.de.nero.com/nerolinux-%{version}-x86.rpm
-# NoSource0-md5:	44d6cbe6f305e858aadbddbf7a49e906
+Source0:	ftp://ftp10.de.nero.com/PUB/c76cad1378e8a9e4bc4c62700e4ad856/nerolinux-%{version}-x86.rpm
+# NoSource0-md5:	43d35405cbc8dd0078949e8cc763a999
 NoSource:	0
 URL:		http://www.nero.com/
 BuildRequires:	cpio
@@ -35,11 +35,7 @@ Oprogramowanie do wypalania płyt CD/DVD pod Linuksem.
 rpm2cpio %{SOURCE0} | cpio -i -d
 
 %{__sed} -i 's,Categories=.*,Categories=GTK;AudioVideo;DiscBurning;,' \
-	usr/share/nero/desktop/NeroLINUX.template
-cat >> usr/share/nero/desktop/NeroLINUX.template <<EOF
-Icon=nero.png
-Exec=nero
-EOF
+	usr/share/applications/nerolinux.desktop
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -47,29 +43,26 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_desktopdir},%{_libdir},%{_pixmapsdir}}
 install -d $RPM_BUILD_ROOT%{_datadir}/%{name}/{docs,sounds}
 
 install usr/bin/nero $RPM_BUILD_ROOT%{_bindir}
-install usr/lib/* $RPM_BUILD_ROOT%{_libdir}
-install usr/share/nero/*.{CFG,ima,so,txt} $RPM_BUILD_ROOT%{_datadir}/%{name}
+cp -ar usr/lib/* $RPM_BUILD_ROOT%{_libdir}
+install usr/share/nero/*.{CFG,ima,txt} $RPM_BUILD_ROOT%{_datadir}/%{name}
+install usr/share/applications/*.desktop $RPM_BUILD_ROOT%{_desktopdir}
 install usr/share/nero/sounds/* $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds
-install usr/share/nero/desktop/* $RPM_BUILD_ROOT%{_desktopdir}/%{name}.desktop
-install usr/share/nero/pixmaps/* $RPM_BUILD_ROOT%{_pixmapsdir}
+cp -ar usr/share/nero/images $RPM_BUILD_ROOT%{_datadir}/%{name}
 # displayed at first startup
-install usr/share/nero/docs/EULA $RPM_BUILD_ROOT%{_datadir}/%{name}/docs
-
-# FHS compliance (*.so moved to %{_libdir})
-cd $RPM_BUILD_ROOT%{_datadir}/%{name}
-for i in *.so ; do
-	mv -f $i $RPM_BUILD_ROOT%{_libdir}
-	ln -s %{_libdir}/$i $i
-done
+cp -ar usr/share/nero/eula $RPM_BUILD_ROOT%{_datadir}/%{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc usr/share/nero/docs/{Manual.pdf,NEWS}
+%doc usr/share/doc/nero/{Manual.pdf,NEWS}
+%lang(de) %doc usr/share/doc/nero/Manual-Deu.pdf
+%lang(fr) %doc usr/share/doc/nero/Manual-Fra.pdf
+%lang(ko) %doc usr/share/doc/nero/Manual-Kor.pdf
+%lang(zh_CN) %doc usr/share/doc/nero/Manual-Chs.pdf
+%lang(zh_TW) %doc usr/share/doc/nero/Manual-Cht.pdf
 %attr(755,root,root) %{_bindir}/*
-%attr(755,root,root) %{_libdir}/*.so
+%attr(755,root,root) %{_libdir}/*
 %{_datadir}/nero
 %{_desktopdir}/*.desktop
-%{_pixmapsdir}/*

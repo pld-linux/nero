@@ -1,3 +1,5 @@
+# TODO:
+# - build x8664 package
 #
 # Conditional build:
 %bcond_with	reqs		# force optional Requires
@@ -6,12 +8,14 @@ Summary:	NeroLINUX CD/DVD burning
 Summary(pl.UTF-8):	NeroLINUX - program do wypalania płyt CD/DVD
 Name:		nero
 Version:	3.0.0.0
-Release:	1
+Release:	1.1
 License:	Commercial (see EULA)
 Group:		X11/Applications
 Source0:	ftp://ftp10.de.nero.com/PUB/c76cad1378e8a9e4bc4c62700e4ad856/nerolinux-%{version}-x86.rpm
 # NoSource0-md5:	43d35405cbc8dd0078949e8cc763a999
-NoSource:	0
+Source1:	ftp://ftp5.de.nero.com/PUB/ee97bc40ba51279ad5ee49c5f88c9c09/nerolinux-%{version}-x86_64.rpm
+# NoSource1-md5:	d0ae720344f1743a43c3e5bb2904cef0
+NoSource:	0 1
 URL:		http://www.nero.com/
 BuildRequires:	cpio
 BuildRequires:	sed >= 4.0
@@ -21,7 +25,7 @@ Requires:	mpg123
 Requires:	sox
 Requires:	vorbis-tools
 %endif
-ExclusiveArch:	%{ix86}
+ExclusiveArch:	%{ix86} %{x8664}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description

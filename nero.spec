@@ -13,7 +13,7 @@ License:	Commercial (see EULA)
 Group:		X11/Applications
 Source0:	http://ftp7.de.nero.com/PUB/508d98a0466780faadab42f373367348/nerolinux-%{version}-x86.rpm
 # NoSource0-md5:	
-Source1:	http://ftp7.de.nero.com/PUB/508d98a0466780faadab42f373367348/nerolinux-%{version}-x86_64.rpm
+Source1:	http://ftp4.de.nero.com/PUB/508d98a0466780faadab42f373367348/nerolinux-%{version}-x86_64.rpm
 # NoSource1-md5:	
 NoSource:	0
 NoSource:	1

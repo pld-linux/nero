@@ -8,13 +8,13 @@ Summary:	NeroLINUX CD/DVD burning
 Summary(pl.UTF-8):	NeroLINUX - program do wypalania płyt CD/DVD
 Name:		nero
 Version:	3.0.0.0
-Release:	1.1
+Release:	1.2
 License:	Commercial (see EULA)
 Group:		X11/Applications
-Source0:	ftp://ftp6.de.nero.com/PUB/ee97bc40ba51279ad5ee49c5f88c9c09/nerolinux-%{version}-x86.rpm
-# NoSource0-md5:	43d35405cbc8dd0078949e8cc763a999	
-Source1:	ftp://ftp4.de.nero.com/PUB/ee97bc40ba51279ad5ee49c5f88c9c09/nerolinux-%{version}-x86_64.rpm
-# NoSource1-md5:	d0ae720344f1743a43c3e5bb2904cef0
+Source0:	http://ftp7.de.nero.com/PUB/508d98a0466780faadab42f373367348/nerolinux-%{version}-x86.rpm
+# NoSource0-md5:	
+Source1:	http://ftp7.de.nero.com/PUB/508d98a0466780faadab42f373367348/nerolinux-%{version}-x86_64.rpm
+# NoSource1-md5:	
 NoSource:	0
 NoSource:	1
 URL:		http://www.nero.com/
